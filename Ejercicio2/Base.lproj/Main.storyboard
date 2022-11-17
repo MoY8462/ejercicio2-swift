@@ -1,24 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ejercicio2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Autoplayer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkp-9z-Ffl">
+                                <rect key="frame" x="20" y="99" width="353" height="34"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-XI-Dqq">
+                                <rect key="frame" x="30" y="173" width="100" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="4bf-bg-Kg1"/>
+                                    <constraint firstAttribute="height" constant="25" id="oJK-gb-ay6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Play"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L78-u6-zEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfA-dY-MO1">
+                                <rect key="frame" x="263" y="173" width="100" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ZrL-gk-Yhg"/>
+                                    <constraint firstAttribute="height" constant="25" id="dpv-9N-Wa0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tSD-Dz-2cL"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xR9-bh-YKc">
+                                <rect key="frame" x="33" y="228" width="327" height="31"/>
+                                <connections>
+                                    <action selector="song:" destination="BYZ-38-t0r" eventType="valueChanged" id="gJK-qZ-Guf"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volumen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUV-mC-EEQ">
+                                <rect key="frame" x="35" y="293" width="323" height="28"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3vg-1g-QLn">
+                                <rect key="frame" x="33" y="346" width="224" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="Xt6-CR-QdA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="volume:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZB8-GP-k9Z"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xR9-bh-YKc" firstAttribute="top" secondItem="Fdg-XI-Dqq" secondAttribute="bottom" constant="30" id="4vT-TP-JC7"/>
+                            <constraint firstItem="3vg-1g-QLn" firstAttribute="top" secondItem="IUV-mC-EEQ" secondAttribute="bottom" constant="25" id="A9b-CG-54x"/>
+                            <constraint firstItem="Fdg-XI-Dqq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="CGd-eq-xmG"/>
+                            <constraint firstItem="3vg-1g-QLn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="O5M-RY-wjq"/>
+                            <constraint firstItem="IUV-mC-EEQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="Pgs-r8-pwc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xR9-bh-YKc" secondAttribute="trailing" constant="35" id="PrH-VG-55T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rkp-9z-Ffl" secondAttribute="trailing" constant="20" id="ar5-oX-8pR"/>
+                            <constraint firstItem="IUV-mC-EEQ" firstAttribute="top" secondItem="xR9-bh-YKc" secondAttribute="bottom" constant="35" id="c5m-xD-Wqx"/>
+                            <constraint firstItem="xR9-bh-YKc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="kvk-aS-pan"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HfA-dY-MO1" secondAttribute="trailing" constant="30" id="mD4-0D-aHI"/>
+                            <constraint firstItem="Rkp-9z-Ffl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="oNb-Vt-QPD"/>
+                            <constraint firstItem="HfA-dY-MO1" firstAttribute="top" secondItem="Rkp-9z-Ffl" secondAttribute="bottom" constant="40" id="qHt-je-qcU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IUV-mC-EEQ" secondAttribute="trailing" constant="35" id="uQg-3E-eHg"/>
+                            <constraint firstItem="Rkp-9z-Ffl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wP1-gd-1zh"/>
+                            <constraint firstItem="Fdg-XI-Dqq" firstAttribute="top" secondItem="Rkp-9z-Ffl" secondAttribute="bottom" constant="40" id="zj6-dk-qgT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sliderDuration" destination="xR9-bh-YKc" id="tGe-4f-xBN"/>
+                        <outlet property="sliderVolume" destination="3vg-1g-QLn" id="bOS-jG-B7H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33" y="-27"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
